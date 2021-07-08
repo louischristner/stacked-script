@@ -4,9 +4,11 @@ NAME	=	a.out
 
 SRC 	=	main.cpp								\
 			src/classes/Dictionary.cpp				\
+			src/classes/Engine.cpp					\
 			src/classes/Literal.cpp					\
 			src/classes/Stack.cpp					\
-			src/exceptions/InvalidTypeException.cpp
+			src/exceptions/InvalidTypeException.cpp	\
+			src/operations/literal_operations.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
