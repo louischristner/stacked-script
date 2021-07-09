@@ -11,4 +11,7 @@ void mul(IEngine &engine);
 void div(IEngine &engine);
 void mod(IEngine &engine);
 
+void swap(IEngine &engine);
+void dup(IEngine &engine);
+
 #endif /* !OPERATIONS_HPP_ */

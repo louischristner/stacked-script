@@ -7,4 +7,6 @@ Engine::Engine()
     operations.add("*", mul);
     operations.add("/", div);
     operations.add("%", mod);
+    operations.add("swap", swap);
+    operations.add("dup", dup);
 }

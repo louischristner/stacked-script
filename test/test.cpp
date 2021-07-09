@@ -1,20 +1,8 @@
-#include <string>
 #include <iostream>
-#include <exception>
 
 #include "../src/headers/Engine.hpp"
 
-class InvalidTestException : public std::exception {
-    public:
-        explicit InvalidTestException() noexcept : Msg("Invalid test") {}
-        explicit InvalidTestException(const std::string &msg) noexcept : Msg(msg) {}
-        const char *what() const noexcept override {
-            return Msg.data();
-        }
-
-    private:
-        std::string Msg;
-};
+#include "test.hpp"
 
 void assert_that(bool condition)
 {

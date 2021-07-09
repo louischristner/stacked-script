@@ -2,10 +2,11 @@ CC		=	g++
 
 NAME	=	tests
 
-SRC		=	literal_operations.cpp						\
+SRC		=	test.cpp									\
 			../src/classes/Engine.cpp					\
 			../src/classes/Literal.cpp					\
-			../src/operations/literal_operations.cpp
+			../src/operations/literal_operations.cpp	\
+			../src/operations/stack_operations.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
