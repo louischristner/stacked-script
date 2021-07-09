@@ -9,4 +9,5 @@ Engine::Engine()
     operations.add("%", mod);
     operations.add("swap", swap);
     operations.add("dup", dup);
+    operations.add("=", cmp);
 }

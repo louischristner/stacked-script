@@ -5,7 +5,8 @@ NAME	=	a.out
 SRC 	=	main.cpp								\
 			src/classes/Engine.cpp					\
 			src/classes/Literal.cpp					\
-			src/operations/literal_operations.cpp
+			src/operations/literal_operations.cpp	\
+			src/operations/stack_operations.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 

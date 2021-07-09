@@ -94,3 +94,17 @@ void mod(IEngine &engine)
         )
     );
 }
+
+void cmp(IEngine &engine)
+{
+    Literal value2 = engine.stack.pop();
+    Literal value1 = engine.stack.pop();
+
+    engine.stack.add(
+        Literal(
+            Literal::BOOLEAN,
+            (value1.getType() == value2.getType() && value1.getValue() == value2.getValue())
+                ? "true" : "false"
+        )
+    );
+}

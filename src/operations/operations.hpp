@@ -13,5 +13,6 @@ void mod(IEngine &engine);
 
 void swap(IEngine &engine);
 void dup(IEngine &engine);
+void cmp(IEngine &engine);
 
 #endif /* !OPERATIONS_HPP_ */
