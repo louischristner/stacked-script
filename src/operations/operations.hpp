@@ -1,16 +1,9 @@
-/*
-** EPITECH PROJECT, 2021
-** stacked-script
-** File description:
-** operations
-*/
-
 #ifndef OPERATIONS_HPP_
 #define OPERATIONS_HPP_
 
-#include "../classes/Engine.cpp"
+#include "../headers/Engine.hpp"
 
-#include "../exceptions/InvalidTypeException.cpp"
+#include "../exceptions/InvalidTypeException.hpp"
 
 void add(Engine &engine);
 

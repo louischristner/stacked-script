@@ -1,3 +1,8 @@
+#ifndef STACK_HPP_
+#define STACK_HPP_
+
+#include <vector>
+
 #include <vector>
 
 template<typename T>
@@ -17,3 +22,5 @@ class Stack {
     private:
         std::vector<T> _stack;
 };
+
+#endif /* !STACK_HPP_ */

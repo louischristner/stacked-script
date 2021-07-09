@@ -1,3 +1,6 @@
+#ifndef DICTIONARY_HPP_
+#define DICTIONARY_HPP_
+
 #include <unordered_map>
 
 template<typename T, typename U>
@@ -16,3 +19,5 @@ class Dictionary {
     private:
         std::unordered_map<T, U> _dictionary;
 };
+
+#endif /* !DICTIONARY_HPP_ */

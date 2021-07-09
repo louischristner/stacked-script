@@ -1,3 +1,6 @@
+#ifndef INVALIDTYPEEXCEPTION_HPP_
+#define INVALIDTYPEEXCEPTION_HPP_
+
 #include <string>
 #include <exception>
 
@@ -11,3 +14,5 @@ class InvalidTypeException : public std::exception {
     private:
         std::string Msg;
 };
+
+#endif /* !INVALIDTYPEEXCEPTION_HPP_ */
