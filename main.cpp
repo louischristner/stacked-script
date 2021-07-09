@@ -10,10 +10,8 @@ int main(void)
 
     engine.stack.add(Literal(Literal::INTEGER, "1"));
     engine.stack.add(Literal(Literal::INTEGER, "1"));
-
-    engine.operations.add("+", add);
-
     engine.operations.get("+")(engine);
+
     std::cout << engine.stack.pop().getValue() << std::endl;
 
     return 0;

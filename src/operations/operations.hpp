@@ -5,6 +5,10 @@
 
 #include "../exceptions/InvalidTypeException.hpp"
 
-void add(Engine &engine);
+void add(IEngine &engine);
+void sub(IEngine &engine);
+void mul(IEngine &engine);
+void div(IEngine &engine);
+void mod(IEngine &engine);
 
 #endif /* !OPERATIONS_HPP_ */

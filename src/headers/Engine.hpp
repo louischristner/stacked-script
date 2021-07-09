@@ -3,14 +3,12 @@
 
 #include <string>
 
-#include "Dictionary.hpp"
-#include "Literal.hpp"
-#include "Stack.hpp"
+#include "IEngine.hpp"
 
-struct Engine {
-    Stack<Literal> stack;
-    Stack<std::string> userDefinedFunctions;
-    Dictionary<std::string, void (*)(Engine &)> operations;
+#include "../operations/operations.hpp"
+
+struct Engine : public IEngine {
+    Engine();
 };
 
 #endif /* !ENGINE_HPP_ */

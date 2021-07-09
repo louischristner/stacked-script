@@ -3,6 +3,8 @@
 
 #include <unordered_map>
 
+#include "../exceptions/InvalidKeyException.hpp"
+
 template<typename T, typename U>
 class Dictionary {
     public:
@@ -13,6 +15,8 @@ class Dictionary {
         }
 
         U get(T key) {
+            if (_dictionary.find(key) == _dictionary.end())
+                throw InvalidKeyException("Key (" + key + ") does not exist.");
             return _dictionary[key];
         }
 

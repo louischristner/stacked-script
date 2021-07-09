@@ -1,0 +1,10 @@
+#include "../headers/Engine.hpp"
+
+Engine::Engine()
+{
+    operations.add("+", add);
+    operations.add("-", sub);
+    operations.add("*", mul);
+    operations.add("/", div);
+    operations.add("%", mod);
+}
