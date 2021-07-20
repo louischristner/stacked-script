@@ -1,4 +1,3 @@
 # stacked-script
 
-## TODO
- - Add header files to fix circular includes
+A simple stack language inspired by Factor developped through TDD
