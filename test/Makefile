@@ -3,6 +3,7 @@ CC		=	g++
 NAME	=	tests
 
 SRC		=	literal_tests.cpp							\
+			stack_tests.cpp								\
 			../src/classes/Engine.cpp					\
 			../src/classes/Literal.cpp					\
 			../src/operations/literal_operations.cpp	\
