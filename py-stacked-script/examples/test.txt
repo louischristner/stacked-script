@@ -1,0 +1,8 @@
+' Define print* word : duplicate before printing to not affect the stack
+: print* dup print ;
+
+: display-only-multiple-of over swap % 0 = [ print* ] when ;
+: display-even 2 display-only-multiple-of ;
+
+0 print*
+10 [ 1 + display-even ] times

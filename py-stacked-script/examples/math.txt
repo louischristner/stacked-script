@@ -1,0 +1,12 @@
+' Define square-root word
+: square-root dup * ;
+
+' Define cube-root word using square-root and looping with times
+: cube-root 2 [ square-root ] times ;
+
+5 cube-root print
+
+' Define 10-power word
+: 10-power 1 swap [ 10 * ] times ;
+
+3 10-power print

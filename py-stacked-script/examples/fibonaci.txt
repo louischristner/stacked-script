@@ -1,0 +1,7 @@
+' Define print* word : duplicate before printing to not affect the stack
+: print* dup print ;
+
+' Display the fibonaci sequence until greater than 100
+0 print*
+1 print*
+[ swap over + print* dup 100 > ] loop
