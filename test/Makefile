@@ -2,7 +2,7 @@ CC		=	g++
 
 NAME	=	tests
 
-SRC		=	test.cpp									\
+SRC		=	literal_tests.cpp							\
 			../src/classes/Engine.cpp					\
 			../src/classes/Literal.cpp					\
 			../src/operations/literal_operations.cpp	\
@@ -13,7 +13,7 @@ OBJ		=	$(SRC:.cpp=.o)
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -lcriterion -o $(NAME)
 
 run:
 	./$(NAME)
