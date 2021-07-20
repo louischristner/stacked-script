@@ -145,3 +145,27 @@ Test(literal_tests, ensure_that_comparison_between_different_types_occurs_withou
 
     cr_assert(engine.stack.pop().getValue() == "false");
 }
+
+Test(literal_tests, ensure_that_true_greater_than_comparison_between_integer_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    engine.stack.add(Literal(Literal::INTEGER, "3"));
+    engine.stack.add(Literal(Literal::INTEGER, "2"));
+
+    engine.operations.get(">")(engine);
+
+    cr_assert(engine.stack.pop().getValue() == "true");
+}
+
+Test(literal_tests, ensure_that_false_greater_than_comparison_between_integer_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    engine.stack.add(Literal(Literal::INTEGER, "2"));
+    engine.stack.add(Literal(Literal::INTEGER, "3"));
+
+    engine.operations.get(">")(engine);
+
+    cr_assert(engine.stack.pop().getValue() == "false");
+}
