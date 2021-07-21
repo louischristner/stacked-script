@@ -1,6 +1,8 @@
 #ifndef OPERATIONS_HPP_
 #define OPERATIONS_HPP_
 
+#include <iostream>
+
 #include "../headers/Engine.hpp"
 
 #include "../exceptions/InvalidTypeException.hpp"
@@ -20,5 +22,9 @@ void le(IEngine &engine);
 void swap(IEngine &engine);
 void dup(IEngine &engine);
 void cmp(IEngine &engine);
+void over(IEngine &engine);
+void drop(IEngine &engine);
+void nip(IEngine &engine);
+void print(IEngine &engine);
 
 #endif /* !OPERATIONS_HPP_ */

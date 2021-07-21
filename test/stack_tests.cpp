@@ -1,3 +1,4 @@
+#include <iostream>
 #include <criterion/criterion.h>
 
 #include "../src/headers/Engine.hpp"
@@ -65,4 +66,23 @@ Test(stack_tests, ensure_that_nip_occurs_without_technical_errors)
 
     cr_assert(engine.stack.size() == 1);
     cr_assert(engine.stack.pop().getValue() == "mic");
+}
+
+Test(stack_tests, ensure_that_print_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    std::streambuf *oldStreamBuf = std::cout.rdbuf();
+    std::ostringstream stringStream;
+
+    std::cout.rdbuf(stringStream.rdbuf());
+
+    engine.stack.add(Literal(Literal::STRING, "Hello world"));
+
+    engine.operations.get("print")(engine);
+
+    std::cout.rdbuf(oldStreamBuf);
+
+    cr_assert(stringStream.str() == "Hello world");
+    cr_assert(engine.stack.size() == 0);
 }

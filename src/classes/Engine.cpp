@@ -15,4 +15,8 @@ Engine::Engine()
 
     operations.add("swap", swap);
     operations.add("dup", dup);
+    operations.add("over", over);
+    operations.add("drop", drop);
+    operations.add("nip", nip);
+    operations.add("print", print);
 }
