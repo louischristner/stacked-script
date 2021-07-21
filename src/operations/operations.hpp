@@ -14,6 +14,7 @@ void mod(IEngine &engine);
 void gt(IEngine &engine);
 void lt(IEngine &engine);
 void ge(IEngine &engine);
+void le(IEngine &engine);
 
 // stack operations
 void swap(IEngine &engine);

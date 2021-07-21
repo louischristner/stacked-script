@@ -11,6 +11,7 @@ Engine::Engine()
     operations.add(">", gt);
     operations.add("<", lt);
     operations.add(">=", ge);
+    operations.add("<=", le);
 
     operations.add("swap", swap);
     operations.add("dup", dup);
