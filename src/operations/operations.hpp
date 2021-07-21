@@ -12,6 +12,7 @@ void mul(IEngine &engine);
 void div(IEngine &engine);
 void mod(IEngine &engine);
 void gt(IEngine &engine);
+void lt(IEngine &engine);
 
 // stack operations
 void swap(IEngine &engine);

@@ -9,6 +9,7 @@ Engine::Engine()
     operations.add("%", mod);
     operations.add("=", cmp);
     operations.add(">", gt);
+    operations.add("<", lt);
 
     operations.add("swap", swap);
     operations.add("dup", dup);
