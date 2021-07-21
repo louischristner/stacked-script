@@ -21,10 +21,13 @@ tests:
 
 clean:
 	rm -f $(OBJ)
+	make clean -C test
 
 fclean:	clean
 	rm -f $(NAME)
+	make fclean -C test
 
 re:	fclean all
+	make re -C test
 
 .PHONY: all clean fclean re

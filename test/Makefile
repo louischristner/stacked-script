@@ -19,4 +19,12 @@ $(NAME):	$(OBJ)
 run:
 	./$(NAME)
 
-.PHONY:	all
+clean:
+	rm -f $(NAME)
+
+fclean: clean
+	rm -f $(OBJ)
+
+re:	fclean all
+
+.PHONY:	all clean fclean re
