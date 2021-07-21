@@ -8,7 +8,7 @@ Add words :
  - `over`
  - `drop`
  - `nip`
- - `print`
+ - `print` -> how to test & implement ? streams in engine ?
  - `times`
  - `loop`
  - `if`
