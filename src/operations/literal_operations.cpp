@@ -144,3 +144,21 @@ void lt(IEngine &engine)
         )
     );
 }
+
+void ge(IEngine &engine)
+{
+    Literal value2 = engine.stack.pop();
+    Literal value1 = engine.stack.pop();
+
+    if (value1.getType() != Literal::INTEGER || value1.getType() != value2.getType()) {
+        throw InvalidTypeException(value1.toString() + " " + value2.toString());
+    }
+
+    engine.stack.add(
+        Literal(
+            Literal::BOOLEAN,
+            std::stoi(value1.getValue()) >= std::stoi(value2.getValue())
+                ? "true" : "false"
+        )
+    );
+}
