@@ -19,6 +19,10 @@ class Stack {
             return value;
         }
 
+        size_t size(void) const {
+            return _stack.size();
+        }
+
     private:
         std::vector<T> _stack;
 };
