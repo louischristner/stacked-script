@@ -1,8 +1,6 @@
 #include <iostream>
 
-#include "src/headers/Engine.hpp"
-
-#include "src/operations/operations.hpp"
+#include "headers/Engine.hpp"
 
 int main(void)
 {

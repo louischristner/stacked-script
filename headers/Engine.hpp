@@ -5,7 +5,7 @@
 
 #include "IEngine.hpp"
 
-#include "../operations/operations.hpp"
+#include "operations/operations.hpp"
 
 struct Engine : public IEngine {
     Engine();

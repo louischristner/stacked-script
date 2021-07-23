@@ -1,7 +1,7 @@
 #include <iostream>
 #include <criterion/criterion.h>
 
-#include "../src/headers/Engine.hpp"
+#include "../headers/Engine.hpp"
 
 Test(stack_tests, ensure_that_swap_occurs_without_technical_errors)
 {

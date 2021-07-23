@@ -5,7 +5,7 @@
 ** Literal
 */
 
-#include "../headers/Literal.hpp"
+#include "../../headers/Literal.hpp"
 
 Literal::Literal(Type type, std::string value):
     _type(type), _value(value) {}

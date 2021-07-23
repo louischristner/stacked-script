@@ -1,6 +1,6 @@
 #include <criterion/criterion.h>
 
-#include "../src/headers/Engine.hpp"
+#include "../headers/Engine.hpp"
 
 Test(literal_tests, ensure_that_addition_occurs_without_technical_errors)
 {

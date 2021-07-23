@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "../headers/Engine.hpp"
+#include "../Engine.hpp"
 
 #include "../exceptions/InvalidTypeException.hpp"
 

@@ -3,7 +3,7 @@
 
 #include <unordered_map>
 
-#include "../exceptions/InvalidKeyException.hpp"
+#include "exceptions/InvalidKeyException.hpp"
 
 template<typename T, typename U>
 class Dictionary {
