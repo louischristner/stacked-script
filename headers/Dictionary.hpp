@@ -1,6 +1,7 @@
 #ifndef DICTIONARY_HPP_
 #define DICTIONARY_HPP_
 
+#include <vector>
 #include <unordered_map>
 
 #include "exceptions/InvalidKeyException.hpp"
@@ -18,6 +19,17 @@ class Dictionary {
             if (_dictionary.find(key) == _dictionary.end())
                 throw InvalidKeyException("Key (" + key + ") does not exist.");
             return _dictionary[key];
+        }
+
+        std::vector<T> keys() {
+            std::vector<T> keys;
+
+            keys.reserve(_dictionary.size());
+            for (auto elem : _dictionary) {
+                keys.push_back(elem.first);
+            }
+
+            return keys;
         }
 
     private:
