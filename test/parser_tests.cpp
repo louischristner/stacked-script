@@ -27,8 +27,5 @@ Test(parser_tests, ensure_that_string_parsing_occurs_without_technical_errors)
 
     parser("\"hello world\"", engine);
 
-    std::string p = engine.stack.pop().getValue();
-    std::cout << p << std::endl;
-
-    cr_assert(p == "hello world");
+    cr_assert(engine.stack.pop().getValue() == "hello world");
 }
