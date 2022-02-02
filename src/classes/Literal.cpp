@@ -30,6 +30,8 @@ std::string Literal::enumToString() const {
             return "STRING";
         case BOOLEAN:
             return "BOOLEAN";
+        case BLOCK:
+            return "BLOCK";
         default:
             return "UNTYPED";
     }

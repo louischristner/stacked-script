@@ -1,5 +1,7 @@
 #include "parser.hpp"
 
+#include <iostream>
+
 bool literal_string_parser(const std::string &command, size_t &index, IEngine &engine)
 {
     size_t next_space = command.find('"', index + 1);
@@ -45,6 +47,31 @@ bool literal_integer_parser(const std::string &command, size_t &index, IEngine &
     return false;
 }
 
+bool literal_block_parser(const std::string &command, size_t &index, IEngine &engine)
+{
+    size_t i = index + 1;
+    size_t block_count = 1;
+
+    if (command[index] == '[') {
+        for  (; command[i]; i++) {
+            block_count += (command[i] == '[') ? 1 : 0;
+            block_count -= (command[i] == ']') ? 1 : 0;
+            if (block_count == 0)
+                break;
+        }
+
+        if (block_count != 0)
+            return false;
+
+        engine.stack.add(Literal(Literal::BLOCK,
+            command.substr(index + 1, i - (index + 1))));
+        index = i;
+        return true;
+    }
+
+    return false;
+}
+
 bool literal_parser(const std::string &command, size_t &index, IEngine &engine)
 {
     std::vector<bool (*)(
@@ -52,6 +79,7 @@ bool literal_parser(const std::string &command, size_t &index, IEngine &engine)
         size_t &index,
         IEngine &engine
     )> parsingFunctions = {
+        literal_block_parser,
         literal_boolean_parser,
         literal_integer_parser,
         literal_string_parser

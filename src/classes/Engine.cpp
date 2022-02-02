@@ -19,4 +19,7 @@ Engine::Engine()
     operations.add("drop", drop);
     operations.add("nip", nip);
     operations.add("print", print);
+
+    operations.add("if", if_cond);
+    operations.add("when", when_cond);
 }

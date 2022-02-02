@@ -8,7 +8,8 @@ class Literal {
         enum Type {
             INTEGER,
             STRING,
-            BOOLEAN
+            BOOLEAN,
+            BLOCK
         };
 
         Literal(Type type, std::string value);

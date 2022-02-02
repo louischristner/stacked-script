@@ -27,4 +27,8 @@ void drop(IEngine &engine);
 void nip(IEngine &engine);
 void print(IEngine &engine);
 
+// condition operations
+void if_cond(IEngine &engine);
+void when_cond(IEngine &engine);
+
 #endif /* !OPERATIONS_HPP_ */

@@ -7,6 +7,7 @@ SRC 	=	main.cpp								\
 			src/classes/Literal.cpp					\
 			src/operations/literal_operations.cpp	\
 			src/operations/stack_operations.cpp		\
+			src/operations/condition_operations.cpp	\
 			src/parser/parser.cpp					\
 			src/parser/literal_parser.cpp			\
 			src/parser/operation_parser.cpp

@@ -8,7 +8,10 @@ int main(void)
     Engine engine;
 
     parser("1 1 +", engine);
-    std::cout << engine.stack.pop().getValue() << std::endl;
+    std::cout << "Remaining stack element:" << std::endl;
+    while (engine.stack.size() > 0) {
+        std::cout << engine.stack.pop().toString() << std::endl;
+    }
 
     return 0;
 }

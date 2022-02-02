@@ -29,3 +29,42 @@ Test(parser_tests, ensure_that_string_parsing_occurs_without_technical_errors)
 
     cr_assert(engine.stack.pop().getValue() == "hello world");
 }
+
+Test(parser_tests, ensure_that_true_if_condition_parsing_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    parser("true [ 2 1 ] [ 3 4 ] if +", engine);
+
+    cr_assert(engine.stack.pop().getValue() == "3");
+    cr_assert(engine.stack.size() == 0);
+}
+
+Test(parser_tests, ensure_that_false_if_condition_parsing_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    parser("false [ 2 1 ] [ 3 4 ] if +", engine);
+
+    cr_assert(engine.stack.pop().getValue() == "7");
+    cr_assert(engine.stack.size() == 0);
+}
+
+Test(parser_tests, ensure_that_true_when_condition_parsing_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    parser("true [ 2 1 + ] when", engine);
+
+    cr_assert(engine.stack.pop().getValue() == "3");
+    cr_assert(engine.stack.size() == 0);
+}
+
+Test(parser_tests, ensure_that_false_when_condition_parsing_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    parser("false [ 2 1 + ] when", engine);
+
+    cr_assert(engine.stack.size() == 0);
+}

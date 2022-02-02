@@ -7,5 +7,3 @@ A simple stack language inspired by Factor developped through TDD
 Add words :
  - `times`
  - `loop`
- - `if`
- - `when`
