@@ -68,3 +68,23 @@ Test(parser_tests, ensure_that_false_when_condition_parsing_occurs_without_techn
 
     cr_assert(engine.stack.size() == 0);
 }
+
+Test(parser_tests, ensure_that_times_loop_parsing_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    parser("1 10 [ 1 + ] times", engine);
+
+    cr_assert(engine.stack.pop().getValue() == "11");
+    cr_assert(engine.stack.size() == 0);
+}
+
+Test(parser_tests, ensure_that_loop_loop_parsing_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    parser("0 1 [ swap over + dup 100 > ] loop", engine);
+
+    cr_assert(engine.stack.pop().getValue() == "144");
+    cr_assert(engine.stack.size() == 1);
+}

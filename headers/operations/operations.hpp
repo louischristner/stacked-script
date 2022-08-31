@@ -31,4 +31,8 @@ void print(IEngine &engine);
 void if_cond(IEngine &engine);
 void when_cond(IEngine &engine);
 
+//loop operations
+void times_loop(IEngine &engine);
+void loop_loop(IEngine &engine);
+
 #endif /* !OPERATIONS_HPP_ */

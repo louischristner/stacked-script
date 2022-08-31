@@ -22,4 +22,7 @@ Engine::Engine()
 
     operations.add("if", if_cond);
     operations.add("when", when_cond);
+
+    operations.add("times", times_loop);
+    operations.add("loop", loop_loop);
 }

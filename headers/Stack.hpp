@@ -3,8 +3,6 @@
 
 #include <vector>
 
-#include <vector>
-
 template<typename T>
 class Stack {
     public:
