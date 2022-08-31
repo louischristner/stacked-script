@@ -1,3 +1,4 @@
+' Display the fibonaci sequence until greater than 100
 0 dup print " " print
 1 dup print " " print
 

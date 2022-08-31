@@ -3,6 +3,8 @@
 
 #include <vector>
 
+#include "exceptions/InvalidReaderException.hpp"
+
 template<typename T>
 class Stack {
     public:
@@ -11,6 +13,10 @@ class Stack {
         }
 
         T pop(void) {
+            if (_stack.size() <= 0) {
+                throw InvalidReaderException("pop operation on empty stack");
+            }
+
             T value = _stack[_stack.size() - 1];
 
             _stack.pop_back();
