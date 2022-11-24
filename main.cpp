@@ -16,6 +16,7 @@ int main(int ac, char **av)
     }
 
     file_content = reader(av[1]);
+    user_defined_functions_parser(file_content, engine);
     parser(file_content, engine);
     while (engine.stack.size() > 0)
         std::cout << engine.stack.pop().toString() << "\n";

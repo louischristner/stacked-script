@@ -1,0 +1,4 @@
+' Create ^2 function
+: pow2 dup * ;
+
+1 1 + pow2

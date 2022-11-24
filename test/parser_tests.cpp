@@ -88,3 +88,29 @@ Test(parser_tests, ensure_that_loop_loop_parsing_occurs_without_technical_errors
     cr_assert(engine.stack.pop().getValue() == "144");
     cr_assert(engine.stack.size() == 1);
 }
+
+Test(parser_tests, ensure_that_user_defined_function_call_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    engine.userDefinedFunctions.add("add2", "2 +");
+
+    parser("2 add2", engine);
+
+    cr_assert(engine.stack.pop().getValue() == "4");
+    cr_assert(engine.stack.size() == 0);
+}
+
+Test(parser_tests, ensure_that_user_defined_function_parsing_occurs_without_technical_errors)
+{
+    Engine engine;
+    std::string expression = ": add2 2 + ; 2 add2";
+
+    user_defined_functions_parser(expression, engine);
+    parser(expression, engine);
+
+    cr_assert(engine.userDefinedFunctions.keys().size() == 1);
+    cr_assert(engine.userDefinedFunctions.get("add2") == " 2 + ");
+    cr_assert(engine.stack.pop().getValue() == "4");
+    cr_assert(engine.stack.size() == 0);
+}

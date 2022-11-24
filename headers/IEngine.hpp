@@ -9,7 +9,7 @@ struct IEngine {
     virtual ~IEngine() = default;
 
     Stack<Literal> stack;
-    Stack<std::string> userDefinedFunctions;
+    Dictionary<std::string, std::string> userDefinedFunctions;
     Dictionary<std::string, void (*)(IEngine &)> operations;
 };
 

@@ -1,7 +1,5 @@
 #include "parser.hpp"
 
-#include <iostream>
-
 bool literal_string_parser(const std::string &command, size_t &index, IEngine &engine)
 {
     size_t next_space = command.find('"', index + 1);

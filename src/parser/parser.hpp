@@ -9,7 +9,9 @@
 
 void parser(const std::string &, IEngine &);
 bool literal_parser(const std::string &, size_t &, IEngine &);
+bool function_parser(const std::string &, size_t &, IEngine &);
 bool operation_parser(const std::string &, size_t &, IEngine &);
 
+void user_defined_functions_parser(std::string &, IEngine &);
 
 #endif /* !PARSER_HPP_ */
