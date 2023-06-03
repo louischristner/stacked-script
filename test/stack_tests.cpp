@@ -86,3 +86,39 @@ Test(stack_tests, ensure_that_print_occurs_without_technical_errors)
     cr_assert(stringStream.str() == "Hello world");
     cr_assert(engine.stack.size() == 0);
 }
+
+Test(stack_tests, ensure_that_spread_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    engine.stack.add(Literal(Literal::BLOCK, "1 2 3 4"));
+
+    cr_assert(engine.stack.size() == 1);
+
+    engine.operations.get("spread")(engine);
+
+    cr_assert(engine.stack.size() == 4);
+    cr_assert(engine.stack.pop().getValue() == "4");
+    cr_assert(engine.stack.pop().getValue() == "3");
+    cr_assert(engine.stack.pop().getValue() == "2");
+    cr_assert(engine.stack.pop().getValue() == "1");
+}
+
+Test(stack_tests, ensure_that_spread_over_occurs_without_technical_errors)
+{
+    Engine engine;
+
+    engine.stack.add(Literal(Literal::INTEGER, "5"));
+    engine.stack.add(Literal(Literal::BLOCK, "1 2 3 4"));
+
+    cr_assert(engine.stack.size() == 2);
+
+    engine.operations.get("sspread")(engine);
+
+    cr_assert(engine.stack.size() == 5);
+    cr_assert(engine.stack.pop().getValue() == "5");
+    cr_assert(engine.stack.pop().getValue() == "4");
+    cr_assert(engine.stack.pop().getValue() == "3");
+    cr_assert(engine.stack.pop().getValue() == "2");
+    cr_assert(engine.stack.pop().getValue() == "1");
+}

@@ -1,5 +1,7 @@
 #include "../../headers/operations/operations.hpp"
 
+void parser(const std::string &command, IEngine &engine);
+
 void swap(IEngine &engine)
 {
     Literal value2 = engine.stack.pop();
@@ -45,4 +47,26 @@ void print(IEngine &engine)
     Literal value = engine.stack.pop();
 
     std::cout << value.getValue();
+}
+
+void spread(IEngine &engine)
+{
+    Literal value = engine.stack.pop();
+
+    if (value.getType() != Literal::BLOCK)
+        throw InvalidTypeException(value.toString());
+
+    parser(value.getValue(), engine);
+}
+
+void spread_swap(IEngine &engine)
+{
+    Literal block = engine.stack.pop();
+    Literal previous = engine.stack.pop();
+
+    if (block.getType() != Literal::BLOCK)
+        throw InvalidTypeException(block.toString());
+
+    parser(block.getValue(), engine);
+    engine.stack.add(previous);
 }

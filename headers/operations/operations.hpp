@@ -26,6 +26,8 @@ void over(IEngine &engine);
 void drop(IEngine &engine);
 void nip(IEngine &engine);
 void print(IEngine &engine);
+void spread(IEngine &engine);
+void spread_swap(IEngine &engine);
 
 // condition operations
 void if_cond(IEngine &engine);
