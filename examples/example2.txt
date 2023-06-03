@@ -3,5 +3,5 @@
 1 dup print " " print
 
 [ swap over + dup print dup 100 >
-    dup false == [ " " print ] when
+    dup false = [ " " print ] when
 ] loop

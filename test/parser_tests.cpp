@@ -83,7 +83,7 @@ Test(parser_tests, ensure_that_loop_loop_parsing_occurs_without_technical_errors
 {
     Engine engine;
 
-    parser("0 1 [ swap over + dup 100 > ] loop", engine);
+    parser("0 1 [ swap over + dup 100 < ] loop", engine);
 
     cr_assert(engine.stack.pop().getValue() == "144");
     cr_assert(engine.stack.size() == 1);

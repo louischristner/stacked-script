@@ -33,7 +33,7 @@ void loop_loop(IEngine &engine)
             throw InvalidTypeException(cond.toString() + " " + block.toString());
         }
 
-        if (cond.getValue() == "true") {
+        if (cond.getValue() == "false") {
             break;
         }
     }
